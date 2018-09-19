@@ -2,6 +2,14 @@
 	//设置错误级别
 	error_reporting('E_ALL & ~E_NOTICE');
 
+	//设置密钥
+	define('Token','test');
+
+	//检测加密签名
+	include './checksing.php';
+	
+	
+
 	//接收客户端发来的请求 响应数据 json格式
 
 	//处理业务逻辑异常
@@ -17,6 +25,9 @@
 		echo resp([],401,$e->getMessage());
 		exit;
 	}
+
+	//检测多次请求
+	include './requests.php';
 
 
 	//处理服务器异常
