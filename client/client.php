@@ -7,8 +7,12 @@
 	//请求的api地址
 
 	$url = 'http://localhost/ApiInterface/server/server.php';
-	
-	$curl->get($url);
+
+	$curl = new Curl\Curl();
+	$curl->post($url, array(
+		'username'=>'lishaokun',
+		'password'=>'123'
+	));
 
 	//是否成功
 	if ($curl->error) {
