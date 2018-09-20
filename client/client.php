@@ -8,9 +8,9 @@
 	$token = 'test';
 
 	//生成一个加密签名
-	$sing = setsing($token);
-	
-	
+	$sing = setsing($token);		
+
+
 	$curl = new Curl\Curl();
 
 	//请求的api地址

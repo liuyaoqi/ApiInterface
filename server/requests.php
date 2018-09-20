@@ -10,15 +10,8 @@
     }catch(Exception $e){
         echo resp([],401,$e->getMessage());exit;
     }   
-
     
-
-    // $stmt = $pdo->query('select * from user');
-
-    // $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    
-    
+    //判断请求次数是否超出
     function requests(){
         
         //今天凌晨时间
@@ -43,6 +36,7 @@
         return $con;
     }
 
+    //记录
     function addrequest(){
         $pdo = new PDO('mysql:host=localhost;dbname=api;charset=utf8','root','');
       
